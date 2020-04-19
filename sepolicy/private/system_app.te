@@ -1,1 +1,6 @@
 hal_client_domain(system_app, hal_mlipay)
+
+# Allow PocketMode to work
+allow system_app sysfs_fps_proximity:file rw_file_perms;
+get_prop(system_app, persist_camera_prop);
+get_prop(system_app, vendor_default_prop)

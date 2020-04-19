@@ -1,1 +1,5 @@
 /system/bin/folio_daemon        u:object_r:folio_daemon_exec:s0
+
+# Fingerprint
+/sys/devices/soc/soc:fingerprint_fpc/proximity_state                        u:object_r:sysfs_fps_proximity:s0
+/sys/devices/soc/soc:fingerprint_goodix/proximity_state                     u:object_r:sysfs_fps_proximity:s0
