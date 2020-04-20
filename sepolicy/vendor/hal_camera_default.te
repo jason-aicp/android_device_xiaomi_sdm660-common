@@ -2,6 +2,7 @@ binder_call(hal_camera_default, hal_configstore_default)
 binder_call(hal_camera_default, hal_graphics_allocator_default)
 binder_call(hal_camera_default, remosaic_daemon)
 typeattribute hal_camera_default data_between_core_and_vendor_violators;
+typeattribute hal_camera_default vendor_executes_system_violators;
 
 allow hal_camera_default sysfs:file { getattr open read };
 allow hal_camera_default sysfs_kgsl:file r_file_perms;
@@ -13,4 +14,7 @@ allow hal_camera_default camera_data_file:file create_file_perms;
 
 allow hal_camera_default remosaic_daemon_service:service_manager find;
 
+allow hal_camera_default system_file:file r_file_perms;
+
 set_prop(hal_camera_default, vendor_camera_prop)
+get_prop(hal_camera_default, persist_camera_prop)
